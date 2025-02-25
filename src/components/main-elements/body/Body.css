@@ -1,0 +1,52 @@
+.body-container {
+  background: black;
+  width: 100%;
+  min-height: 100vh;
+  /* Se adapta al contenido */
+  height: auto;
+  position: relative;
+  overflow: hidden;
+  z-index: -1;
+  display: flex;
+  flex-direction: column;
+}
+
+.body-content {
+  position: relative;
+  z-index: 1;
+  padding: 20px;
+}
+
+.bubbles {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  display: flex;
+  flex-wrap: wrap;
+  pointer-events: none;
+}
+
+.bubbles span {
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: linear-gradient(45deg, rgba(255, 0, 0, 1) 0%, rgba(255, 94, 0, 1) 50%, rgba(153, 0, 0, 1) 100%);
+  box-shadow: 0 0 10px rgba(223, 0, 0, 0.7), 0 0 50px rgba(153, 0, 0, 0.8), 0 0 100px rgba(255, 0, 0, 0.6);
+  animation: animate 20s linear infinite;
+  animation-duration: calc(200s / var(--i));
+  left: calc(100% * var(--i) / 30);
+  /* eje X -- separation */
+}
+
+@keyframes animate {
+  0% {
+    transform: translateY(200vh) scale(0);
+  }
+
+  100% {
+    transform: translateY(-100vh) scale(1);
+  }
+}
