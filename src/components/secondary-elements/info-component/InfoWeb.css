@@ -1,0 +1,67 @@
+.info-container {
+  width: 100%;
+  height: auto;
+  background-color: transparent;
+  font-family: Arial, sans-serif;
+  overflow: hidden;
+  padding: 20px;
+  text-align: center;
+}
+
+.header-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 15px;
+  padding: 5px;
+}
+
+.company-title {
+  font-size: 1.3rem;
+  color: #ffffff;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+/* Descripción */
+.description-container {
+  margin-bottom: 20px;
+}
+
+.description-container p {
+  font-size: 0.70rem;
+  margin: 10px;
+  color: #ffffff;
+  line-height: 1.6;
+  text-align: justify;
+  text-justify: inter-word;
+}
+
+.social-media-container {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  margin-bottom: 20px;
+}
+
+.social-icon {
+  font-size: 1.2rem;
+  color: #ffffff;
+  transition: color 0.3s ease;
+}
+
+.social-icon:hover {
+  color: #3498db;
+}
+
+.footer-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.copyright {
+  font-size: 0.5rem;
+  color: #999;
+  margin: 10px;
+}

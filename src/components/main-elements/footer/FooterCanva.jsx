@@ -1,17 +1,18 @@
 import React from 'react';
 import './FooterCanva.css';
-import InfoComponent from '../webinformarion/WebInformation';
-import FormValidation from '../formwithvalidation/FormValidation';
+
+import InfoWeb from '../../secondary-elements/info-component/InfoWeb';
+import ValidationFrom from '../../secondary-elements/validation-form/ValidationFrom';
 
 const FooterCanva = () => {
   return (
     <footer className="footer-container">
       <div className='container-element'>
         <div className='container-info'>
-          <InfoComponent />
+          <InfoWeb></InfoWeb>
         </div>
         <div className='container-form'>
-          <FormValidation />
+          <ValidationFrom></ValidationFrom>
         </div>
       </div>
     </footer>

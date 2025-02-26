@@ -1,0 +1,73 @@
+.form-container {
+  width: 100%;
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  font-family: 'Roboto', sans-serif;
+  /* Cambio de tipografía */
+}
+
+h2 {
+  text-align: center;
+  font-size: 28px;
+  color: #ffffff;
+  padding: 3px;
+  margin-bottom: 10px;
+  font-weight: 500;
+}
+
+.form-group {
+  padding: 5px;
+  position: relative;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="password"] {
+  width: 100%;
+  padding: 12px;
+  margin: 12px 0px;
+  border-radius: 5px;
+  font-size: 16px;
+  background-color: #fff;
+  border: none;
+  transition: border-color 0.3s;
+  box-sizing: border-box;
+  font-family: 'Roboto', sans-serif;
+}
+
+.input-error {
+  border-color: #e74c3c;
+}
+
+.error-message {
+  position: absolute;
+  bottom: -3px;
+  left: 0px;
+  color: #e74c3c;
+  font-size: 12px;
+  margin: 0;
+  padding-left: 5px;
+  font-family: 'Roboto', sans-serif;
+}
+
+.submit-button {
+  width: 100%;
+  padding: 12px;
+  margin: 10px 0px;
+  background-color: #3498db;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  font-size: 16px;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 500;
+}
+
+.submit-button:hover {
+  background-color: #2980b9;
+}
