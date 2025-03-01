@@ -1,0 +1,110 @@
+.support-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+  background-color: #f9f9f9;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  max-width: 800px;
+  margin: 0 auto;
+  z-index: 1;
+}
+
+.content-infoSuppor {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.content-infoSuppor h1 {
+  font-size: 2.5rem;
+  color: #333;
+}
+
+.content-infoSuppor p {
+  font-size: 1.2rem;
+  color: #666;
+  margin: 20px 0;
+}
+
+.content-infoSuppor h3 {
+  font-size: 1.5rem;
+  color: #333;
+}
+
+.icon-container {
+  display: flex;
+  justify-content: space-around;
+  width: 100%;
+  max-width: 400px;
+  margin-top: 20px;
+}
+
+.icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background-color: #fff;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  text-decoration: none;
+  color: #333;
+  font-size: 24px;
+}
+
+.icon:hover {
+  transform: translateY(-10px) scale(1.1);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+}
+
+/* Colores específicos para cada icono */
+.whatsapp {
+  background-color: #25d366;
+  color: #fff;
+}
+
+.email {
+  background-color: #d44638;
+  color: #fff;
+}
+
+.twitter {
+  background-color: #1da1f2;
+  color: #fff;
+}
+
+.discord {
+  background-color: #7289da;
+  color: #fff;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .support-container {
+    padding: 10px;
+  }
+
+  .content-infoSuppor h1 {
+    font-size: 2rem;
+  }
+
+  .content-infoSuppor p {
+    font-size: 1rem;
+  }
+
+  .content-infoSuppor h3 {
+    font-size: 1.2rem;
+  }
+
+  .icon-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .icon {
+    margin-bottom: 10px;
+  }
+}

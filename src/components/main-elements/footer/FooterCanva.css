@@ -5,6 +5,8 @@
   flex-direction: column;
   align-items: center;
   gap: 20px;
+  border-top: 0.5px solid red;
+  box-shadow: 0px 2px 15px rgb(255, 72, 0);
 }
 
 .container-element {
@@ -34,7 +36,6 @@
   padding: 2%;
 }
 
-/* Responsividad */
 @media (max-width: 768px) {
   .container-element {
     flex-direction: column;
