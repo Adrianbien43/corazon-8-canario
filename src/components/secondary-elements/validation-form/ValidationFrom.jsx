@@ -1,7 +1,9 @@
 import React, { useState } from 'react';
 import './ValidationFrom.css';
+import { useTranslation } from 'react-i18next';
 
 const ValidationFrom = () => {
+  const { t } = useTranslation();
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -14,15 +16,15 @@ const ValidationFrom = () => {
     let error = '';
     switch (name) {
       case 'name':
-        if (!value.trim()) error = 'El nombre es obligatorio';
+        if (!value.trim()) error = t("validationForm.errors.nameRequired");
         break;
       case 'email':
-        if (!value.trim()) error = 'El correo electrónico es obligatorio';
-        else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value)) error = 'El correo electrónico no es válido';
+        if (!value.trim()) error = t("validationForm.errors.emailRequired");
+        else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value)) error = t("validationForm.errors.emailInvalid");
         break;
       case 'password':
-        if (!value.trim()) error = 'La contraseña es obligatoria';
-        else if (value.length < 6) error = 'La contraseña debe tener al menos 6 caracteres';
+        if (!value.trim()) error = t("validationForm.errors.passwordRequired");
+        else if (value.length < 6) error = t("validationForm.errors.passwordMinLength");
         break;
       default:
         break;
@@ -61,16 +63,16 @@ const ValidationFrom = () => {
 
     if (Object.keys(newErrors).length === 0) {
       console.log('Formulario enviado:', formData);
-      alert('Formulario enviado con éxito');
+      alert(t("validationForm.successMessage"));
     }
   };
 
   return (
     <div className="form-container">
-      <h2 id="form-title">Formulario de Registro</h2>
+      <h2 id="form-title">{t("validationForm.title")}</h2>
       <form onSubmit={handleSubmit} aria-labelledby="form-title" noValidate>
         <div className="form-group">
-          <label htmlFor="name">Nombre</label>
+          <label htmlFor="name">{t("validationForm.labels.name")}</label>
           <input
             type="text"
             id="name"
@@ -91,7 +93,7 @@ const ValidationFrom = () => {
         </div>
 
         <div className="form-group">
-          <label htmlFor="email">Correo electrónico</label>
+          <label htmlFor="email">{t("validationForm.labels.email")}</label>
           <input
             type="email"
             id="email"
@@ -112,7 +114,7 @@ const ValidationFrom = () => {
         </div>
 
         <div className="form-group">
-          <label htmlFor="password">Contraseña</label>
+          <label htmlFor="password">{t("validationForm.labels.password")}</label>
           <input
             type="password"
             id="password"
@@ -133,7 +135,7 @@ const ValidationFrom = () => {
         </div>
 
         <button type="submit" className="submit-button">
-          Registrarse
+          {t("validationForm.submitButton")}
         </button>
       </form>
     </div>

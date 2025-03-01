@@ -1,0 +1,60 @@
+{
+  "heart": "CORAZÓN",
+  "canary": "CANARIO",
+  "spanish": "Español",
+  "english": "Inglés",
+  "infoWeb": {
+    "companyTitle": "PARAÍSO 8 CANARIO",
+    "description": "Soy un joven emprendedor con el objetivo de contribuir al crecimiento y la prosperidad de nuestro querido archipiélago Canario. Me comprometo a crear páginas web para los establecimientos locales de nuestras islas, ayudándoles a ser más competitivos y a aumentar la visibilidad de los productos y servicios que ofrecen. Mi meta es que todos los pequeños negocios de la isla cuenten con una plataforma digital donde puedan darse a conocer al mundo exterior.",
+    "copyright": "Paraíso 8 Canario. Todos los derechos reservados."
+  },
+  "validationForm": {
+    "title": "Formulario de Registro",
+    "labels": {
+      "name": "Nombre",
+      "email": "Correo electrónico",
+      "password": "Contraseña"
+    },
+    "errors": {
+      "nameRequired": "El nombre es obligatorio",
+      "emailRequired": "El correo electrónico es obligatorio",
+      "emailInvalid": "El correo electrónico no es válido",
+      "passwordRequired": "La contraseña es obligatoria",
+      "passwordMinLength": "La contraseña debe tener al menos 6 caracteres"
+    },
+    "submitButton": "Registrarse",
+    "successMessage": "Formulario enviado con éxito"
+  },
+  "home": {
+    "welcomeTitle": "Bienvenidos a Corazón Canario",
+    "welcomeSubtitle": "¡Hagamos crecer juntos tu presencia en internet!",
+    "welcomeText": "Ofrezco mis servicios en todas las Islas Canarias, adaptándome a cualquier tipo de negocio o local.\n\nSi has llegado hasta aquí, es porque seguramente buscas una manera de hacer crecer tu negocio y llegar a un público más amplio. En esta web puedes ponerte en contacto conmigo para la creación de páginas web personalizadas, atractivas y optimizadas, diseñadas para captar la atención de nuevos clientes y ofrecer tus servicios online de manera eficiente.\n\nDesarrollo todo tipo de páginas web y soluciones digitales adaptadas a tus necesidades. Estoy deseando escuchar tus ideas y ayudarte a construir un puente sólido entre tu negocio y el mundo digital.",
+    "infoData": {
+      "restaurants": {
+        "title": "Restaurantes",
+        "subtitle": "Atrae más clientes",
+        "text": "¿Quieres que tu restaurante sea reconocido en todas las islas? No esperes más, contáctame y juntos crearemos la conexión perfecta para que tu negocio llegue a más personas."
+      },
+      "bars": {
+        "title": "Bares",
+        "subtitle": "Atrae más clientes",
+        "text": "Si eres dueño de un bar y quieres atraer más clientes, puedo ayudarte a mejorar su visibilidad y expandir su alcance con estrategias efectivas de marketing. Juntos lograremos que tu bar sea un referente en su sector."
+      },
+      "barbershops": {
+        "title": "Barberías",
+        "subtitle": "Atrae más clientes",
+        "text": "¿Tienes una barbería y quieres que más personas la conozca? ¡Puedo ayudarte! Te ofrezco estrategias para expandir tu alcance, atraer nuevos clientes y aumentar tus reservas. No importa si estás empezando o si ya tienes tu negocio establecido, ¡juntos lograremos más!"
+      },
+      "clothingStores": {
+        "title": "Tienda de Ropa",
+        "subtitle": "Atrae más clientes",
+        "text": "¿Tienes una tienda de ropa y quieres que más personas visiten tu negocio? Puedo ayudarte a potenciar tu presencia online y aumentar las ventas con estrategias efectivas de marketing digital. ¡Haz que tu tienda sea el lugar al que todos quieren ir!"
+      }
+    }
+  },
+  "navigationMenu": {
+    "info": "Info",
+    "help": "Ayuda",
+    "community": "Comunidad"
+  }
+}

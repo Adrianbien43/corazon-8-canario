@@ -1,0 +1,60 @@
+{
+  "heart": "HEART",
+  "canary": "CANARY",
+  "spanish": "Spanish",
+  "english": "English",
+  "infoWeb": {
+    "companyTitle": "PARADISE 8 CANARY",
+    "description": "I am a young entrepreneur with the goal of contributing to the growth and prosperity of our beloved Canary Islands. I am committed to creating websites for local establishments on our islands, helping them become more competitive and increasing the visibility of the products and services they offer. My goal is for all small businesses on the island to have a digital platform where they can make themselves known to the outside world.",
+    "copyright": "Paradise 8 Canary. All rights reserved."
+  },
+  "validationForm": {
+    "title": "Registration Form",
+    "labels": {
+      "name": "Name",
+      "email": "Email",
+      "password": "Password"
+    },
+    "errors": {
+      "nameRequired": "Name is required",
+      "emailRequired": "Email is required",
+      "emailInvalid": "Email is invalid",
+      "passwordRequired": "Password is required",
+      "passwordMinLength": "Password must be at least 6 characters"
+    },
+    "submitButton": "Sign Up",
+    "successMessage": "Form submitted successfully"
+  },
+  "home": {
+    "welcomeTitle": "Welcome to Corazón Canario",
+    "welcomeSubtitle": "Let's grow your online presence together!",
+    "welcomeText": "I offer my services across all the Canary Islands, adapting to any type of business or establishment.\n\nIf you've made it here, it's likely because you're looking for a way to grow your business and reach a wider audience. On this website, you can contact me for the creation of personalized, attractive, and optimized websites designed to capture the attention of new customers and offer your services online efficiently.\n\nI develop all types of websites and digital solutions tailored to your needs. I'm eager to hear your ideas and help you build a solid bridge between your business and the digital world.",
+    "infoData": {
+      "restaurants": {
+        "title": "Restaurants",
+        "subtitle": "Attract more customers",
+        "text": "Do you want your restaurant to be recognized across all the islands? Don't wait any longer, contact me, and together we'll create the perfect connection to help your business reach more people."
+      },
+      "bars": {
+        "title": "Bars",
+        "subtitle": "Attract more customers",
+        "text": "If you own a bar and want to attract more customers, I can help you improve its visibility and expand its reach with effective marketing strategies. Together, we'll make your bar a reference in its sector."
+      },
+      "barbershops": {
+        "title": "Barbershops",
+        "subtitle": "Attract more customers",
+        "text": "Do you have a barbershop and want more people to know about it? I can help you! I offer strategies to expand your reach, attract new customers, and increase your bookings. Whether you're just starting or already have an established business, together we'll achieve more!"
+      },
+      "clothingStores": {
+        "title": "Clothing Stores",
+        "subtitle": "Attract more customers",
+        "text": "Do you have a clothing store and want more people to visit your business? I can help you boost your online presence and increase sales with effective digital marketing strategies. Make your store the place everyone wants to go!"
+      }
+    }
+  },
+  "navigationMenu": {
+    "info": "Info",
+    "help": "Help",
+    "community": "Community"
+  }
+}

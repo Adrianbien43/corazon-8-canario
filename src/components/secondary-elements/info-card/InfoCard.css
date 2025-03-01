@@ -1,10 +1,10 @@
 .info-card {
-  background-color: rgba(255, 255, 255, 0.233);
+  background-color: rgba(151, 151, 151, 0.233);
   border-radius: 1rem;
   box-shadow: 0 4px 8px rgba(255, 0, 0, 0.404);
   padding: 1rem;
   width: 300px;
-  height: 450px;
+  height: 455px;
   transition: transform 0.2s ease-in-out;
   backdrop-filter: blur(8px);
   margin: 10px;
@@ -30,7 +30,7 @@
 .info-card h2 {
   font-size: 1.5rem;
   font-weight: bold;
-  color: #2c5282;
+  color: #ffffff;
   text-align: center;
   margin-bottom: 0.5rem;
 }
@@ -45,8 +45,8 @@
 }
 
 .info-card p {
-  font-size: 14px;
-  color: #080808;
+  font-size: 15px;
+  color: #ffffff;
   margin-top: 1rem;
   text-align: justify;
 }
