@@ -8,6 +8,7 @@ export const Info = () => {
   return (
     <>
       <Body>
+
       </Body>
     </>
   );

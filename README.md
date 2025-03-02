@@ -7,36 +7,34 @@ Currently, two official plugins are available:
 - [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
 - [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
 
-
 # 🌍 CORAZON 8 CANARIO
 
-## 🏷️ Web pensada para dar soporte a todas las tiendas de Canaria. 
+## 🏷️ Website designed to support all stores in the Canary Islands.
 
-Esta web ayudara a la creacion, mantenimiento y soporte de paginas web para todos aquellos pequeños locales que quieren una pagina web personalizada y unica. 
+This website will help with the creation, maintenance, and support of web pages for all small businesses that want a personalized and unique website.
 
 ---
 
-## ✍️ Autor  
-**[Adrián Bienvenido Morales Perdomob](https://github.com/Adrianbien43)**  
-Desarrollador Frontend apasionado por las tecnologías web.  
+## ✍️ Author  
+**[Adrián Bienvenido Morales Perdomo](https://github.com/Adrianbien43)**  
+Frontend developer passionate about web technologies.  
 
+# 🌍 My React Project with Leaflet and Multilanguage Support 🌎
 
-# 🌍 Mi Proyecto React con Leaflet y Multilenguaje 🌎
+This project is a **React** application that displays a map with some stores using **Leaflet** and supports multiple languages with **i18next**.
 
-Este proyecto es una aplicación en **React** que muestra un mapa con algunas tiendas usando **Leaflet** y soporta múltiples idiomas con **i18next**.
+I must clarify that it is a work in progress and, for now, just a project.
 
-Tengo que aclarar que esta en proceso de desarrollo y por ahora es solo un proyecto.
-
-## 🚀 Tecnologías Usadas  
+## 🚀 Technologies Used  
 - ⚛️ **React** (Frontend)  
-- 🗺️ **Leaflet** (Mapas)  
-- 🌍 **react-i18next** (Soporte multilenguaje)  
+- 🗺️ **Leaflet** (Maps)  
+- 🌍 **react-i18next** (Multilanguage support)  
 
-## 📦 Instalación  
-Sigue estos pasos para ejecutar el proyecto en tu máquina:
+## 📦 Installation  
+Follow these steps to run the project on your machine:
 
 ```sh
-git clone https://github.com/tu-usuario/mi-proyecto.git
-cd mi-proyecto
+git clone https://github.com/your-username/my-project.git
+cd my-project
 npm install
 npm run dev
