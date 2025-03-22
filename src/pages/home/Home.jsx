@@ -12,7 +12,6 @@ import clothingStoreImage from "../../assets/clothingstore.webp";
 export const Home = () => {
   const { t } = useTranslation();
 
-  // Datos de las tarjetas de información
   const infoData = [
     {
       title: t("home.infoData.restaurants.title"),
@@ -49,7 +48,6 @@ export const Home = () => {
       <div className="text-info">
         <h1>{t("home.welcomeTitle")}</h1>
         <h3>{t("home.welcomeSubtitle")}</h3>
-        {/* Renderiza el texto con saltos de línea */}
         <p>
           {t("home.welcomeText")
             .split('\n')
@@ -61,7 +59,6 @@ export const Home = () => {
             ))}
         </p>
       </div>
-      {/* Pasa los datos de las tarjetas al componente InfoCardList */}
       <InfoCardList infoData={infoData} />
     </Body>
   );
