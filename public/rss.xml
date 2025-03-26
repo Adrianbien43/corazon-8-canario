@@ -1,13 +1,4 @@
-import fs from "fs";
-import path from "path";
-import { fileURLToPath } from "url";
-
-// Obtener la ruta del archivo actual
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = path.dirname(__filename);
-
-const generateRSS = () => {
-  const rssContent = `<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0" encoding="UTF-8"?>
   <rss version="2.0">
     <channel>
       <title>Noticias de Turismo y Digitalización - Corazón Canario</title>
@@ -29,14 +20,4 @@ const generateRSS = () => {
       </item>
       
     </channel>
-  </rss>`;
-
-  // Construir la ruta absoluta a la carpeta public
-  const outputPath = path.join(__dirname, "../../public/rss.xml");
-
-  // Escribir el archivo RSS en la carpeta public
-  fs.writeFileSync(outputPath, rssContent);
-  console.log(`✅ RSS generado en ${outputPath}`);
-};
-
-generateRSS();
+  </rss>

@@ -1,0 +1,20 @@
+.rss-icon-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+}
+
+.rss-link {
+  text-decoration: none;
+}
+
+.rss-icon {
+  width: 40px;
+  height: 40px;
+  transition: transform 0.3s ease;
+}
+
+.rss-icon:hover {
+  transform: scale(1.2);
+}
