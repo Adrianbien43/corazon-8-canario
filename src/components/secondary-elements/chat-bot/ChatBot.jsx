@@ -1,25 +1,27 @@
-// Chatbot.jsx
 import React, { useState, useEffect } from "react";
 import { database } from "../../../firebaseConfig";
 import { ref, push, onValue, set } from "firebase/database";
 import './Chatbot.css';
 
-const Chatbot = ({ onConversationEnd }) => {  // Recibimos la función onConversationEnd
+const Chatbot = ({ onConversationEnd }) => {
   const [messages, setMessages] = useState([]);
   const [inputValue, setInputValue] = useState('');
 
-  const userId = 'User1';  // Aquí usas un ID único por usuario, como el ID de autenticación o un identificador único.
+  const userId = 'User1'; // ID único del usuario
 
-  // Cargar mensajes desde Firebase cuando el componente se monta
   useEffect(() => {
     const messagesRef = ref(database, `conversations/conversation-Chat-and-${userId}/messages`);
-    onValue(messagesRef, (snapshot) => {
+    const unsubscribe = onValue(messagesRef, (snapshot) => {
       const data = snapshot.val();
       if (data) {
         const loadedMessages = Object.values(data);
         setMessages(loadedMessages);
+      } else {
+        setMessages([]);
       }
     });
+
+    return () => unsubscribe();
   }, [userId]);
 
   const handleInputChange = (e) => {
@@ -36,14 +38,8 @@ const Chatbot = ({ onConversationEnd }) => {  // Recibimos la función onConvers
     const lowerCaseInput = inputValue.toLowerCase();
     let botMessage = null;
 
-    if (lowerCaseInput.includes('hola') || lowerCaseInput.includes('buenos días')) {
+    if (lowerCaseInput.includes('hola')) {
       botMessage = { text: '¡Hola! ¿En qué puedo ayudarte?', sender: 'bot', timestamp: Date.now() };
-    } else if (lowerCaseInput.includes('cómo estás')) {
-      botMessage = { text: '¡Estoy bien, gracias! ¿Y tú?', sender: 'bot', timestamp: Date.now() };
-    } else if (lowerCaseInput.includes('color favorito')) {
-      botMessage = { text: '¡Me gusta el azul! ¿Y a ti?', sender: 'bot', timestamp: Date.now() };
-    } else if (lowerCaseInput.includes('qué te gusta hacer')) {
-      botMessage = { text: '¡Me gusta ayudar a las personas con sus preguntas!', sender: 'bot', timestamp: Date.now() };
     } else if (lowerCaseInput.includes('adiós')) {
       botMessage = { text: '¡Adiós! Espero haber podido ayudarte.', sender: 'bot', timestamp: Date.now() };
     }
@@ -61,7 +57,7 @@ const Chatbot = ({ onConversationEnd }) => {  // Recibimos la función onConvers
     push(messagesRef, message);
   };
 
-  // Función que mueve la conversación a completed-conversations
+  // Nueva función para guardar la conversación completada
   const saveCompletedConversation = () => {
     const completedRef = ref(database, `completed-conversations/conversation-${Date.now()}`);
     set(completedRef, {
@@ -69,7 +65,11 @@ const Chatbot = ({ onConversationEnd }) => {  // Recibimos la función onConvers
       messages: messages,
       timestamp: Date.now(),
     }).then(() => {
-      onConversationEnd();  // Llamamos a la función para indicar que la conversación ha terminado
+      setMessages([]); // Limpiar los mensajes
+      alert("La conversación ha sido guardada correctamente.");
+      if (onConversationEnd) {
+        onConversationEnd(); // Llamar a la función para indicar que la conversación ha terminado
+      }
     });
   };
 
@@ -104,7 +104,6 @@ const Chatbot = ({ onConversationEnd }) => {  // Recibimos la función onConvers
           </button>
         </div>
 
-        {/* Botón para finalizar la conversación y guardarla */}
         <button onClick={saveCompletedConversation} className="end-conversation-button">
           Terminar Conversación
         </button>
