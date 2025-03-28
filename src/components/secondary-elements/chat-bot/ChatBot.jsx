@@ -1,25 +1,45 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import { database } from "../../../firebaseConfig";
-import { ref, push, onValue, set } from "firebase/database";
+import { ref, push, onValue } from "firebase/database";
 import './Chatbot.css';
 
-const Chatbot = ({ onConversationEnd }) => {
+const Chatbot = () => {
   const [messages, setMessages] = useState([]);
   const [inputValue, setInputValue] = useState('');
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
+  const [isTyping, setIsTyping] = useState(false);
+  const messagesEndRef = useRef(null);
 
-  const userId = 'User1'; // ID único del usuario
+  const userId = 'User1';
 
+  // Auto-scroll al final de los mensajes
   useEffect(() => {
-    const messagesRef = ref(database, `conversations/conversation-Chat-and-${userId}/messages`);
-    const unsubscribe = onValue(messagesRef, (snapshot) => {
-      const data = snapshot.val();
-      if (data) {
-        const loadedMessages = Object.values(data);
-        setMessages(loadedMessages);
-      } else {
-        setMessages([]);
+    messagesEndRef.current?.scrollIntoView({ behavior: 'smooth' });
+  }, [messages]);
+
+  // Cargar mensajes desde Firebase
+  useEffect(() => {
+    const messagesRef = ref(database, `conversations/${userId}/messages`);
+
+    const unsubscribe = onValue(
+      messagesRef,
+      (snapshot) => {
+        const data = snapshot.val();
+        if (data) {
+          const loadedMessages = Object.values(data);
+          setMessages(loadedMessages);
+        } else {
+          setMessages([]);
+        }
+        setLoading(false);
+      },
+      (error) => {
+        console.error("Error:", error);
+        setError("Error al cargar mensajes");
+        setLoading(false);
       }
-    });
+    );
 
     return () => unsubscribe();
   }, [userId]);
@@ -28,50 +48,57 @@ const Chatbot = ({ onConversationEnd }) => {
     setInputValue(e.target.value);
   };
 
-  const handleSendMessage = () => {
+  const handleKeyPress = (e) => {
+    if (e.key === 'Enter') {
+      handleSendMessage();
+    }
+  };
+
+  const saveMessageToFirebase = async (message) => {
+    const messagesRef = ref(database, `conversations/${userId}/messages`);
+    return push(messagesRef, message);
+  };
+
+  const handleSendMessage = async () => {
     if (inputValue.trim() === '') return;
 
     const userMessage = { text: inputValue, sender: 'user', timestamp: Date.now() };
-    setMessages((prevMessages) => [...prevMessages, userMessage]);
-    saveMessageToFirebase(userMessage);
 
-    const lowerCaseInput = inputValue.toLowerCase();
-    let botMessage = null;
-
-    if (lowerCaseInput.includes('hola')) {
-      botMessage = { text: '¡Hola! ¿En qué puedo ayudarte?', sender: 'bot', timestamp: Date.now() };
-    } else if (lowerCaseInput.includes('adiós')) {
-      botMessage = { text: '¡Adiós! Espero haber podido ayudarte.', sender: 'bot', timestamp: Date.now() };
-    }
-
-    if (botMessage) {
-      setMessages((prevMessages) => [...prevMessages, botMessage]);
-      saveMessageToFirebase(botMessage);
-    }
-
+    // Actualización optimista
+    setMessages((prev) => [...prev, userMessage]);
     setInputValue('');
+
+    await saveMessageToFirebase(userMessage);
+
+    // Respuesta del bot
+    setIsTyping(true);
+    const botResponse = generateBotResponse(inputValue);
+
+    setTimeout(async () => {
+      setMessages((prev) => [...prev, botResponse]);
+      await saveMessageToFirebase(botResponse);
+      setIsTyping(false);
+    }, 1000);
   };
 
-  const saveMessageToFirebase = (message) => {
-    const messagesRef = ref(database, `conversations/conversation-Chat-and-${userId}/messages`);
-    push(messagesRef, message);
+  const generateBotResponse = (userInput) => {
+    const lowerCaseInput = userInput.toLowerCase();
+
+    if (/hola|buenos días/i.test(lowerCaseInput)) {
+      return { text: '¡Hola! ¿En qué puedo ayudarte hoy?', sender: 'bot', timestamp: Date.now() };
+    } else if (/adiós|chao|hasta luego/i.test(lowerCaseInput)) {
+      return { text: '¡Hasta luego! Fue un gusto ayudarte.', sender: 'bot', timestamp: Date.now() };
+    } else if (/cómo estás|como estas/i.test(lowerCaseInput)) {
+      return { text: '¡Estoy funcionando al 100%! ¿Y tú cómo estás?', sender: 'bot', timestamp: Date.now() };
+    } else if (/ayuda|necesito ayuda/i.test(lowerCaseInput)) {
+      return { text: 'Claro, dime en qué necesitas ayuda.', sender: 'bot', timestamp: Date.now() };
+    } else {
+      return { text: 'No estoy seguro de entender. ¿Puedes reformular tu pregunta?', sender: 'bot', timestamp: Date.now() };
+    }
   };
 
-  // Nueva función para guardar la conversación completada
-  const saveCompletedConversation = () => {
-    const completedRef = ref(database, `completed-conversations/conversation-${Date.now()}`);
-    set(completedRef, {
-      userId: userId,
-      messages: messages,
-      timestamp: Date.now(),
-    }).then(() => {
-      setMessages([]); // Limpiar los mensajes
-      alert("La conversación ha sido guardada correctamente.");
-      if (onConversationEnd) {
-        onConversationEnd(); // Llamar a la función para indicar que la conversación ha terminado
-      }
-    });
-  };
+  if (loading) return <div className="loading">Cargando mensajes...</div>;
+  if (error) return <div className="error">{error}</div>;
 
   return (
     <div className="chatbot-wrapper">
@@ -89,6 +116,14 @@ const Chatbot = ({ onConversationEnd }) => {
               {message.text}
             </div>
           ))}
+          {isTyping && (
+            <div className="message bot-message typing-indicator">
+              <span>.</span>
+              <span>.</span>
+              <span>.</span>
+            </div>
+          )}
+          <div ref={messagesEndRef} />
         </div>
 
         <div className="input-container">
@@ -96,17 +131,19 @@ const Chatbot = ({ onConversationEnd }) => {
             type="text"
             value={inputValue}
             onChange={handleInputChange}
+            onKeyPress={handleKeyPress}
             className="input"
             placeholder="Escribe tu mensaje..."
+            disabled={isTyping}
           />
-          <button onClick={handleSendMessage} className="button">
+          <button
+            onClick={handleSendMessage}
+            className="button"
+            disabled={!inputValue.trim() || isTyping}
+          >
             Enviar
           </button>
         </div>
-
-        <button onClick={saveCompletedConversation} className="end-conversation-button">
-          Terminar Conversación
-        </button>
       </div>
     </div>
   );

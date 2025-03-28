@@ -12,6 +12,7 @@ const SupportSection = () => {
         <h3>¡Espero que tengas un excelente día! Quedo atento a tu mensaje.</h3>
       </div>
 
+
       <div className="icon-container">
         <a href="https://wa.me/tunumero" target="_blank" rel="noopener noreferrer" className="icon whatsapp">
           <i className="fab fa-whatsapp"></i>

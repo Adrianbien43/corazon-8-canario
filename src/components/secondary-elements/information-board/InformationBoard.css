@@ -1,0 +1,64 @@
+.information-board {
+  border: 2px solid #e57373;
+  /* Rojo claro para el borde */
+  padding: 20px;
+  margin: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: rgba(255, 235, 238, 0.7);
+  /* Rojo translúcido para el fondo */
+  color: #d32f2f;
+  /* Rojo oscuro para el texto principal */
+  width: 100%;
+  /* Asegura que el componente ocupe todo el ancho disponible */
+  box-sizing: border-box;
+  /* Incluye el padding y el borde en el ancho total */
+}
+
+.information-board img {
+  max-width: 100%;
+  height: auto;
+  margin-bottom: 10px;
+}
+
+.information-board input,
+.information-board textarea {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid #ef9a9a;
+  /* Rojo claro para los bordes de los inputs */
+  background-color: rgba(255, 205, 210, 0.5);
+  /* Rojo claro translúcido para el fondo de los inputs */
+  color: #d32f2f;
+  /* Rojo oscuro para el texto de los inputs */
+  box-sizing: border-box;
+  /* Incluye el padding y el borde en el ancho total */
+}
+
+.information-board textarea {
+  height: 100px;
+}
+
+.information-board button {
+  background-color: #f44336;
+  /* Rojo principal para el botón */
+  color: white;
+  padding: 10px 15px;
+  border: none;
+  cursor: pointer;
+}
+
+.information-board button:hover {
+  background-color: #d32f2f;
+  /* Rojo oscuro al pasar el ratón */
+}
+
+/* Estilos para el formulario en modo de edición */
+.information-board input,
+.information-board textarea,
+.information-board button {
+  display: block;
+  /* Asegura que los elementos del formulario ocupen su propia línea */
+}

@@ -1,22 +1,30 @@
 .chatbot-wrapper {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
-  background-color: rgba(255, 255, 255, 0.8);
+  position: fixed;
+  /* Fija el chat en la pantalla */
+  bottom: 0;
+  /* Asegura que el chat esté en la parte inferior */
+  right: 20px;
+  /* Ajusta la posición desde el borde derecho */
+  width: 100%;
+  max-width: 400px;
+  /* Ancho máximo del chat */
+  z-index: 1000;
+  /* Asegura que el chat esté por encima de otros elementos */
+  background-color: rgba(255, 255, 255, 0.9);
   /* Fondo translúcido */
-  padding: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  /* Sombra para destacar el chat */
+  border-radius: 10px;
+  /* Bordes redondeados */
+  overflow: hidden;
+  /* Evita que el contenido se desborde */
 }
 
 .chatbot-container {
-  width: 100%;
-  max-width: 400px;
-  border-radius: 15px;
-  background-color: #ffffff;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  overflow: hidden;
   display: flex;
   flex-direction: column;
+  height: 500px;
+  /* Altura fija del chat */
 }
 
 .chatbot-header {
@@ -32,11 +40,12 @@
 }
 
 .messages-container {
-  height: 300px;
+  flex-grow: 1;
+  /* Permite que el contenedor de mensajes ocupe el espacio disponible */
   overflow-y: auto;
+  /* Habilita el desplazamiento vertical */
   padding: 15px;
   background-color: #f9f9f9;
-  flex-grow: 1;
   display: flex;
   flex-direction: column;
   gap: 10px;
@@ -45,7 +54,6 @@
 .message {
   padding: 10px;
   border-radius: 10px;
-  margin-bottom: 10px;
   max-width: 80%;
   background-color: #ffffff;
   color: #333333;
@@ -56,17 +64,19 @@
 .user-message {
   background-color: #ffcccc;
   /* Fondo rosado claro */
-  color: #000000;
   align-self: flex-end;
-  margin-left: auto;
 }
 
 .bot-message {
   background-color: #ffe6e6;
   /* Fondo rosado más claro */
-  color: #000000;
   align-self: flex-start;
-  margin-right: auto;
+}
+
+.typing-indicator {
+  display: flex;
+  gap: 5px;
+  color: #999999;
 }
 
 .input-container {
@@ -100,28 +110,6 @@
 }
 
 .button:hover {
-  background-color: #e60000;
-  /* Rojo más oscuro */
-  transform: scale(1.05);
-  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
-}
-
-.end-conversation-button {
-  margin: 15px;
-  padding: 10px 20px;
-  background-color: #ff4d4d;
-  /* Rojo claro */
-  color: white;
-  border: none;
-  border-radius: 25px;
-  font-size: 14px;
-  font-weight: bold;
-  cursor: pointer;
-  transition: all 0.3s ease;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-}
-
-.end-conversation-button:hover {
   background-color: #e60000;
   /* Rojo más oscuro */
   transform: scale(1.05);

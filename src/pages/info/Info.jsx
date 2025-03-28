@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 import "./Info.css";
 import Body from '../../components/main-elements/body/Body';
 import Chatbot from '../../components/secondary-elements/chat-bot/ChatBot';
-import CompletedConversations from '../../components/secondary-elements/completed-conversations/CompletedConversations';
 import RSSIcon from '../../components/secondary-elements/rss/rss';
 
 export const Info = () => {
@@ -16,7 +15,6 @@ export const Info = () => {
     <>
       <Body>
         <Chatbot onConversationEnd={handleConversationEnd} />
-        {conversationEnded && <CompletedConversations />}
         <div className="rss-section">
           <h3>Suscríbete a nuestro RSS</h3>
           <RSSIcon />

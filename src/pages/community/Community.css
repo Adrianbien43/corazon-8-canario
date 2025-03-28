@@ -1,0 +1,89 @@
+.community-container {
+  padding: 30px;
+  background-color: rgba(252, 0, 63, 0.2);
+  /* Rojo translúcido para el fondo */
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  /* Sombra sutil mejorada */
+  margin: 40px auto;
+  /* Centrado horizontal */
+  max-width: 800px;
+  /* Ancho máximo para mejor legibilidad */
+  text-align: center;
+  /* Centrar elementos internos */
+}
+
+.community-container h2 {
+  color: #e53935;
+  /* Rojo más intenso para el título */
+  font-size: 2.5em;
+  /* Tamaño de fuente más grande */
+  margin-bottom: 10px;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+  /* Sombra sutil en el texto */
+}
+
+.community-container h4 {
+  color: #f8bbd0;
+  /* Un tono de rosa claro para el subtítulo */
+  font-size: 1.2em;
+  margin-bottom: 20px;
+}
+
+.community-container button {
+  background-color: #f44336;
+  /* Rojo principal para el botón */
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1em;
+  transition: background-color 0.3s ease;
+  /* Transición suave para el hover */
+  margin-top: 20px;
+}
+
+.community-container button:hover {
+  background-color: #d32f2f;
+  /* Rojo más oscuro al pasar el ratón */
+}
+
+/* Estilos para InformationBoard (si es necesario) */
+/* Puedes ajustar estos estilos según tus necesidades */
+.information-board {
+  margin: 20px auto;
+  max-width: 700px;
+  padding: 20px;
+  border: 1px solid #e57373;
+  /* Rojo claro para el borde */
+  border-radius: 8px;
+  background-color: rgba(255, 235, 238, 0.3);
+  /* Fondo rojo translúcido */
+}
+
+.information-board h3 {
+  color: #d32f2f;
+  /* Rojo oscuro para el título */
+  font-size: 1.5em;
+  margin-bottom: 10px;
+}
+
+.information-board h4 {
+  color: #e57373;
+  /* Rojo claro para el subtítulo */
+  font-size: 1.1em;
+  margin-bottom: 10px;
+}
+
+.information-board p {
+  color: #333;
+  /* Texto más oscuro para el contenido */
+  line-height: 1.6;
+}
+
+.information-board img {
+  max-width: 100%;
+  height: auto;
+  margin-top: 10px;
+}
