@@ -2,7 +2,7 @@
 <rss version="2.0">
   <channel>
     <title>Noticias de la Comunidad</title>
-    <link>https://chat-3d4d8.web.app/community</link>
+    <link>https://chat-3d4d8.web.app/community#community-container</link>
     <description>Últimas noticias publicadas por los usuarios.</description>
     <language>es</language>
     <pubDate>Sun, 30 Mar 2025 12:00:00 GMT</pubDate>
@@ -11,50 +11,26 @@
 
     <item>
       <title>Publicación de Usuario 1</title>
-      <link>https://chat-3d4d8.web.app/community</link>
+      <link>https://chat-3d4d8.web.app/community#community-container</link>
       <description>Esta es la primera publicación de un usuario en la comunidad.</description>
       <pubDate>Sat, 29 Mar 2025 10:00:00 GMT</pubDate>
-      <guid>https://chat-3d4d8.web.app/community</guid>
+      <guid>https://chat-3d4d8.web.app/community#community-container</guid>
     </item>
 
     <item>
       <title>Publicación de Usuario 2</title>
-      <link>https://chat-3d4d8.web.app/community</link>
+      <link>https://chat-3d4d8.web.app/community#community-container</link>
       <description>Esta es la segunda publicación de un usuario en la comunidad.</description>
       <pubDate>Fri, 28 Mar 2025 15:00:00 GMT</pubDate>
-      <guid>https://chat-3d4d8.web.app/community</guid>
+      <guid>https://chat-3d4d8.web.app/community#community-container</guid>
     </item>
 
     <item>
       <title>Publicación de Usuario 3</title>
-      <link>https://chat-3d4d8.web.app/community</link>
+      <link>https://chat-3d4d8.web.app/community#community-container</link>
       <description>Esta es la tercera publicación de un usuario en la comunidad.</description>
       <pubDate>Thu, 27 Mar 2025 08:00:00 GMT</pubDate>
-      <guid>https://chat-3d4d8.web.app/community</guid>
-    </item>
-
-    <item>
-      <title>Gran Canaria lidera en turismo sostenible</title>
-      <link>https://chat-3d4d8.web.app/news/turismo-sostenible</link>
-      <description>Gran Canaria se posiciona como líder en turismo sostenible con nuevas iniciativas ecológicas.</description>
-      <pubDate>Sat, 29 Mar 2025 10:00:00 GMT</pubDate>
-      <guid>https://chat-3d4d8.web.app/news/turismo-sostenible</guid>
-    </item>
-
-    <item>
-      <title>Tenerife inaugura un nuevo centro cultural</title>
-      <link>https://chat-3d4d8.web.app/news/centro-cultural-tenerife</link>
-      <description>El nuevo centro cultural en Tenerife promete ser un punto de encuentro para artistas y turistas.</description>
-      <pubDate>Fri, 28 Mar 2025 15:00:00 GMT</pubDate>
-      <guid>https://chat-3d4d8.web.app/news/centro-cultural-tenerife</guid>
-    </item>
-
-    <item>
-      <title>Lanzarote: Nuevas rutas de senderismo</title>
-      <link>https://chat-3d4d8.web.app/news/rutas-senderismo-lanzarote</link>
-      <description>Descubre las nuevas rutas de senderismo en Lanzarote, ideales para los amantes de la naturaleza.</description>
-      <pubDate>Thu, 27 Mar 2025 08:00:00 GMT</pubDate>
-      <guid>https://chat-3d4d8.web.app/news/rutas-senderismo-lanzarote</guid>
+      <guid>https://chat-3d4d8.web.app/community#community-container</guid>
     </item>
   </channel>
 </rss>

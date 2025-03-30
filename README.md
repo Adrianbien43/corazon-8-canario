@@ -33,7 +33,7 @@ I must clarify that it is a work in progress and, for now, just a project.
 ## 📦 Installation  
 Follow these steps to run the project on your machine:
 
-```sh
+
 git clone https://github.com/your-username/my-project.git
 cd my-project
 npm install
@@ -42,4 +42,5 @@ npm run dev
 ## 🚀 Proyecto en Firebase Hosting
 Puedes ver la aplicación en vivo aquí: [Chat App](https://chat-3d4d8.web.app)
 
-
+## Captura de Pantalla del Lector de Feeds
+![Lector de Feeds](.src/assets/img.png)
