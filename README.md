@@ -43,4 +43,4 @@ npm run dev
 Puedes ver la aplicación en vivo aquí: [Chat App](https://chat-3d4d8.web.app)
 
 ## Captura de Pantalla del Lector de Feeds
-![Lector de Feeds](.src/assets/img.png)
+![Lector de Feeds](./src/assets/img.jpg)
