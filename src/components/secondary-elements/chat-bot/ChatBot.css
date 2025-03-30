@@ -15,9 +15,7 @@
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
   /* Sombra para destacar el chat */
   border-radius: 10px;
-  /* Bordes redondeados */
   overflow: hidden;
-  /* Evita que el contenido se desborde */
 }
 
 .chatbot-container {

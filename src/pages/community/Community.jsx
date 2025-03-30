@@ -32,10 +32,18 @@ export const Community = () => {
     });
   };
 
+  // 🔄 Función para redirigir a community-container
+  const scrollToCommunityContainer = () => {
+    const element = document.getElementById("community-container");
+    if (element) {
+      element.scrollIntoView({ behavior: "smooth" });
+    }
+  };
+
   return (
     <>
       <Body>
-        <div className="community-container">
+        <div id="community-container" className="community-container">
           <h2>Comunidad</h2>
           <h4>¡¡Espero que todos tengáis un buen día!!</h4>
           <button onClick={handleAddBoard}>➕ Añadir nuevo tablero</button>

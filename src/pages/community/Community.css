@@ -1,89 +1,171 @@
+/* Contenedor principal de la comunidad */
 .community-container {
   padding: 30px;
-  background-color: rgba(252, 0, 63, 0.2);
-  /* Rojo translúcido para el fondo */
-  border-radius: 10px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-  /* Sombra sutil mejorada */
+  background-color: rgba(252, 0, 63, 0.1);
+  /* Fondo más suave */
+  border-radius: 15px;
+  /* Bordes más redondeados */
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+  /* Sombra más pronunciada */
   margin: 40px auto;
-  /* Centrado horizontal */
-  max-width: 800px;
-  /* Ancho máximo para mejor legibilidad */
+  max-width: 900px;
+  /* Ancho máximo ligeramente mayor */
   text-align: center;
-  /* Centrar elementos internos */
+  font-family: 'Arial', sans-serif;
+  /* Fuente estándar */
+  transition: transform 0.3s ease;
+  /* Animación al pasar el ratón */
 }
 
+.community-container:hover {
+  transform: scale(1.02);
+  /* Efecto de zoom al pasar el ratón */
+}
+
+/* Título principal */
 .community-container h2 {
-  color: #e53935;
-  /* Rojo más intenso para el título */
-  font-size: 2.5em;
+  color: #c62828;
+  /* Rojo más oscuro */
+  font-size: 2.8em;
   /* Tamaño de fuente más grande */
-  margin-bottom: 10px;
-  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
-  /* Sombra sutil en el texto */
+  margin-bottom: 15px;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+  /* Sombra más destacada */
 }
 
+/* Subtítulo */
 .community-container h4 {
-  color: #f8bbd0;
-  /* Un tono de rosa claro para el subtítulo */
-  font-size: 1.2em;
-  margin-bottom: 20px;
+  color: #f48fb1;
+  /* Rosa claro */
+  font-size: 1.3em;
+  margin-bottom: 25px;
+  font-style: italic;
+  /* Estilo cursivo */
 }
 
+/* Botón para agregar tableros */
 .community-container button {
-  background-color: #f44336;
-  /* Rojo principal para el botón */
+  background-color: #e53935;
+  /* Rojo más vibrante */
   color: white;
-  padding: 12px 20px;
+  padding: 14px 25px;
+  /* Botón más grande */
   border: none;
-  border-radius: 5px;
+  border-radius: 8px;
+  /* Bordes más redondeados */
   cursor: pointer;
-  font-size: 1em;
-  transition: background-color 0.3s ease;
-  /* Transición suave para el hover */
+  font-size: 1.1em;
+  /* Fuente más grande */
+  font-weight: bold;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  /* Transiciones suaves */
   margin-top: 20px;
 }
 
 .community-container button:hover {
-  background-color: #d32f2f;
-  /* Rojo más oscuro al pasar el ratón */
+  background-color: #b71c1c;
+  /* Rojo más oscuro */
+  transform: scale(1.05);
+  /* Efecto de zoom */
 }
 
-/* Estilos para InformationBoard (si es necesario) */
-/* Puedes ajustar estos estilos según tus necesidades */
+/* Contenedor de los tableros de información */
 .information-board {
-  margin: 20px auto;
-  max-width: 700px;
+  background-color: #ffffff;
+  /* Fondo blanco */
+  border: 1px solid #e0e0e0;
+  /* Borde gris claro */
+  border-radius: 10px;
   padding: 20px;
-  border: 1px solid #e57373;
-  /* Rojo claro para el borde */
-  border-radius: 8px;
-  background-color: rgba(255, 235, 238, 0.3);
-  /* Fondo rojo translúcido */
+  margin: 20px 0;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  /* Sombra ligera */
+  text-align: left;
+  /* Alineación del texto */
+  transition: box-shadow 0.3s ease;
 }
 
+.information-board:hover {
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+  /* Sombra más pronunciada al pasar el ratón */
+}
+
+/* Título del tablero */
 .information-board h3 {
   color: #d32f2f;
-  /* Rojo oscuro para el título */
-  font-size: 1.5em;
+  /* Rojo oscuro */
+  font-size: 1.8em;
   margin-bottom: 10px;
+  font-weight: bold;
 }
 
+/* Subtítulo del tablero */
 .information-board h4 {
   color: #e57373;
-  /* Rojo claro para el subtítulo */
-  font-size: 1.1em;
-  margin-bottom: 10px;
+  /* Rojo claro */
+  font-size: 1.2em;
+  margin-bottom: 15px;
+  font-style: italic;
 }
 
+/* Texto del contenido del tablero */
 .information-board p {
-  color: #333;
-  /* Texto más oscuro para el contenido */
-  line-height: 1.6;
+  color: #424242;
+  /* Gris oscuro */
+  line-height: 1.8;
+  /* Espaciado entre líneas */
+  font-size: 1em;
+  margin-bottom: 15px;
 }
 
+/* Imagen dentro del tablero */
 .information-board img {
   max-width: 100%;
   height: auto;
-  margin-top: 10px;
+  margin-top: 15px;
+  border-radius: 10px;
+  /* Bordes redondeados para las imágenes */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  /* Sombra ligera */
+}
+
+/* Contenedor del enlace RSS */
+.rss-link-container {
+  position: fixed;
+  /* Hace que el contenedor sea fijo */
+  bottom: 20px;
+  /* Lo posiciona a 20px desde la parte inferior */
+  right: 20px;
+  /* Lo posiciona a 20px desde la parte derecha */
+  padding: 15px;
+  background-color: rgba(255, 235, 238, 0.9);
+  /* Fondo rosado claro con más opacidad */
+  border-radius: 10px;
+  text-align: center;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  /* Sombra ligera */
+  z-index: 1000;
+  /* Asegura que esté por encima de otros elementos */
+}
+
+.rss-link-container p {
+  color: #c62828;
+  /* Rojo oscuro */
+  font-size: 1.2em;
+  margin-bottom: 10px;
+}
+
+.rss-link-container a {
+  color: #e53935;
+  /* Rojo vibrante */
+  font-size: 1.1em;
+  text-decoration: none;
+  font-weight: bold;
+  transition: color 0.3s ease;
+}
+
+.rss-link-container a:hover {
+  color: #b71c1c;
+  /* Rojo más oscuro */
+  text-decoration: underline;
 }

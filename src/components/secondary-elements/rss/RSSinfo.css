@@ -1,0 +1,16 @@
+.rss-icon-link {
+  display: inline-block;
+  text-decoration: none;
+}
+
+.rss-icon {
+  width: 40px;
+  /* Tamaño del icono */
+  height: 40px;
+  transition: transform 0.3s ease;
+}
+
+.rss-icon:hover {
+  transform: scale(1.1);
+  /* Efecto de zoom al pasar el ratón */
+}

@@ -14,6 +14,7 @@ import { Info } from "./pages/info/Info";
 import { TechnicalSupport } from "./pages/technical-support/TechnicalSupport";
 import { Community } from "./pages/community/Community";
 import { Restaurants } from "./pages/restaurants/Restaurants";
+import BoardDetail from './pages/community/BoardDetail';  // Añadir esta importación
 
 function App() {
   return (
@@ -26,6 +27,7 @@ function App() {
           <Route path="/info" element={<Info />} />
           <Route path="/technicalsupport" element={<TechnicalSupport />} />
           <Route path="/community" element={<Community />} />
+          <Route path="/community/:id" element={<BoardDetail />} />  {/* Ruta dinámica para el detalle del tablero */}
           <Route path="/restaurants" element={<Restaurants />} />
         </Routes>
         <FooterCanva />

@@ -38,3 +38,8 @@ git clone https://github.com/your-username/my-project.git
 cd my-project
 npm install
 npm run dev
+
+## 🚀 Proyecto en Firebase Hosting
+Puedes ver la aplicación en vivo aquí: [Chat App](https://chat-3d4d8.web.app)
+
+
